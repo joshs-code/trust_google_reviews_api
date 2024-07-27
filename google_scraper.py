@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.chrome.options import Options
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.chrome.service import Service
 import time
 
 class GoogleScraper:
@@ -17,11 +19,11 @@ class GoogleScraper:
 
         self.chrome_options = Options()
         self.chrome_options.add_argument("--headless")
-        self.chrome_options.add_argument(
-            "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36")
+        self.chrome_options.add_argument('--no-sandbox')
+        self.chrome_options.add_argument('--disable-dev-shm-usage')
         self.chrome_options.add_argument(f'--proxy-server=http://{self.PROXY_HOST}:{self.PROXY_PORT}')
         self.driver = webdriver.Chrome(options=self.chrome_options)
-
+        self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=self.chrome_options)
         self.data = []
 
     def get_all(self, url):
