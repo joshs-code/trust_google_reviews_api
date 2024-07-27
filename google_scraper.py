@@ -21,7 +21,7 @@ class GoogleScraper:
         self.chrome_options.add_argument("--headless")
         self.chrome_options.add_argument('--no-sandbox')
         self.chrome_options.add_argument('--disable-dev-shm-usage')
-        self.chrome_options.add_argument(f'--proxy-server=http://{self.PROXY_HOST}:{self.PROXY_PORT}')
+        # self.chrome_options.add_argument(f'--proxy-server=http://{self.PROXY_HOST}:{self.PROXY_PORT}')
         self.driver = webdriver.Chrome(options=self.chrome_options)
         self.driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=self.chrome_options)
         self.data = []
