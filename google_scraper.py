@@ -16,7 +16,7 @@ class GoogleScraper:
         self.PROXY_PASS = "60xo02m57ubm"
 
         self.chrome_options = Options()
-        # self.chrome_options.add_argument("--headless")
+        self.chrome_options.add_argument("--headless")
         self.chrome_options.add_argument(
             "user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36")
         self.chrome_options.add_argument(f'--proxy-server=http://{self.PROXY_HOST}:{self.PROXY_PORT}')
