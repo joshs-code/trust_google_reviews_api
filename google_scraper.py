@@ -12,10 +12,10 @@ import time
 class GoogleScraper:
 
     def __init__(self):
-        self.PROXY_HOST = "45.127.248.127"
-        self.PROXY_PORT = "5128"
-        self.PROXY_USER = "nedylxcx"
-        self.PROXY_PASS = "60xo02m57ubm"
+        self.PROXY_HOST = ""
+        self.PROXY_PORT = ""
+        self.PROXY_USER = ""
+        self.PROXY_PASS = ""
 
         self.chrome_options = Options()
         self.chrome_options.add_argument("--headless")
